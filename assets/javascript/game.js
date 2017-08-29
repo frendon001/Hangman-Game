@@ -19,7 +19,9 @@ var hangman = {
 	currentWordState: "",
 	currentWordArr: [],
 	//create array of possible guess options
-	wordList: ["Constellation", "Meteorite", "Eclipse", "Micrometeorites"],
+	wordList: ["Constellation", "Meteorite", "Eclipse",
+		"Micrometeorites", "Milky Way", "Shooting star",
+		"Solar System", "Comet", "Light Year", "Orbit"],
 	// wordPlaceHolder: function() {
 	// 	//set place holders for currentWordStatus variable
 	// 	//used to hide word at the start of new word
