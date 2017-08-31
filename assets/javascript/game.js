@@ -4,6 +4,12 @@ var displayLossCount = document.getElementById("loss-count");
 var displayCurrentWord = document.getElementById("current-word");
 var displayRemainingGuesses = document.getElementById("number-guesses");
 var displayLettersGuessed = document.getElementById("letters-guessed");
+var gameMessage1 = document.getElementById("hangman-message-1");
+var gameMessage2 = document.getElementById("hangman-message-2");
+var displayUsedWords = document.getElementById("used-words-section");
+var displayUsedWordsList = document.getElementById("used-words");
+var audioWin = document.getElementById("audio-win"); 
+var audioLose = document.getElementById("audio-lose"); 
 var isCapLetterReg = /[A-Z]/g;
 
 // create hangman object for the game
@@ -55,6 +61,8 @@ var hangman = {
 			this.currentWordState = this.currentWord.replace(isCapLetterReg, "_");
 			isCapLetterReg.lastIndex = 0;
 
+			
+
 		} else if(this.wordList.length > 1) {
 
 			//createvraible to hold current word for filtering
@@ -85,6 +93,7 @@ var hangman = {
 
 	}
 
+
 };
 
 
@@ -111,9 +120,14 @@ document.onkeyup = function(event) {
 	//https://siderite.blogspot.com/2011/11/careful-when-reusing-javascript-regexp.html
 	isCapLetterReg.lastIndex = 0;
 
+	//reset the game message
+	gameMessage1.textContent = "Select another key on your keyboard to continue guessing the word below.";
+	gameMessage2.textContent = "";
+
 	//check if game is over
 	if (hangman.gameOver === true){
-		console.log("GAMEOVER!");
+		gameMessage1.textContent = "Game Over";
+		gameMessage2.textContent = "Press RESET to start the game again.";
 
 	//if game is not over continue playing the game
 	//Validadate that a A-Z letterkey was entered otherwise do nothing
@@ -144,6 +158,14 @@ document.onkeyup = function(event) {
 
 		//Check if word guess is complete
 		if (hangman.currentWordState === hangman.currentWord) {
+			//diplay used words section
+			if (hangman.wordsUsed.length === 1) {
+				displayUsedWords.classList.remove("d-none");
+			}
+			//add used words to list displayed to player
+			var listItem = document.createElement("li");
+			listItem.innerHTML = hangman.currentWord;
+			displayUsedWordsList.appendChild(listItem);
 			//Increment win count and use new word
 			hangman.wins++;
 			hangman.newWord();
@@ -154,10 +176,26 @@ document.onkeyup = function(event) {
 			displayWinCount.textContent = hangman.wins;
 			displayLossCount.textContent = hangman.losses;
 			displayLettersGuessed.textContent = hangman.lettersGuessed.join(",");
+			//reset the game message
+			gameMessage1.textContent = "You won!";
+			gameMessage2.textContent = "Now try guessing the new word below.";
+			//Play win audio
+			audioWin.play();
+
+
+
 		}
 
 		//Check if player ran out of guesses
 		if (hangman.remainingGuesses == 0) {
+			//diplay used words section
+			if (hangman.wordsUsed.length === 1) {
+				displayUsedWords.classList.remove("d-none");
+			}
+			//add used words to list displayed to player
+			var listItem = document.createElement("li");
+			listItem.innerHTML = hangman.currentWord;
+			displayUsedWordsList.appendChild(listItem);
 			//Increment losses count and use new word
 			hangman.losses++;
 			hangman.newWord();
@@ -168,6 +206,11 @@ document.onkeyup = function(event) {
 			displayWinCount.textContent = hangman.wins;
 			displayLossCount.textContent = hangman.losses;
 			displayLettersGuessed.textContent = hangman.lettersGuessed.join(",");
+			//reset the game message
+			gameMessage1.textContent = "You lost.";
+			gameMessage2.textContent = "Don't give up! Try guessing the new word below.";
+			//play lose audio
+			audioLose.play();
 		}
 	}
 

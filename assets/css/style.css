@@ -10,9 +10,30 @@ body{
 	color: #ffffff;
 }
 
-#hangman-directions {
-	margin-top: 75px;
-	margin-bottom: 50px;
+p {
+	margin-bottom: 10px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+ul li {
+	font-size: 12px;
+}
+
+.page-title {
+	font-size: 4.5rem;
+}
+
+#hangman-message-1 {
+	margin-top: 40px;
+
+}
+
+#hangman-message-2 {
+	margin-bottom: 10px;
 }
 
 .header {
@@ -22,9 +43,22 @@ body{
 #hangman-edition{
 	color: #eeeff3;
 }
+
 #current-word {
-	letter-spacing: 5px
+	letter-spacing: 10px;
+	font-size: 28px;
+	color: #85C1E9;
 }
+
+#letters-guessed {
+	color: #F9E79F;
+	font-size: 18px;
+}
+
+#number-guesses {
+	font-size: 18px;
+}
+
 .hangman-content {
 	padding: 20px;
 	background-color: rgba(37,31,51,0.45);
@@ -32,7 +66,7 @@ body{
 }
 
 .reset-btn-row {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 .reset-btn{
@@ -43,3 +77,4 @@ body{
 	background-color: #eeeff3;
 	color: rgb(37,31,51);
 }
+

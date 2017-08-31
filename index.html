@@ -14,7 +14,7 @@
 
 			<header class="row header">
 				<div class="col-md-6">
-					<h1 class="display-1">HANGMAN</h1>
+					<h1 class="page-title">HANGMAN</h1>
 					<h3 id="hangman-edition">Galactic Edition</h3>
 
 				</div>
@@ -23,13 +23,14 @@
 
 			<div class="row justify-content-md-center text-center">
 				<div class="col-md-6">
-					<h4 id="hangman-directions">Press any key to get started! </h4>
+					<p id="hangman-message-1">Press any key to get started! </p>
+					<p id="hangman-message-2"></p>
 				</div>
 			</div>
 
 			<div class="row justify-content-md-center">
 				<div class="col-md-6">
-					<section class="hangman-content">
+					<section class="hangman-content text-center">
 						<p>Wins: <span id="win-count"></span></p>
 						<p>Losses: <span id="loss-count"></span></p>
 						<p>Current Word</p>
@@ -40,6 +41,14 @@
 						<p id="letters-guessed"></p>
 					</section>
 				</div>
+				<div class="col-md-4 d-none" id="used-words-section">
+					<section class="hangman-content text-center" >
+						<p>Previous Words:</p>
+						<ul id="used-words">
+							
+						</ul>
+					</section>
+				</div>
 			</div>
 
 			<div class="row justify-content-md-center text-center reset-btn-row">
@@ -47,6 +56,14 @@
 					<a class="btn reset-btn" href="index.html" role="button">RESET GAME</a>
 				</div>
 			</div>
+			<audio id="audio-win">
+				<source src="assets/audio/Short-piano-intro.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+			<audio id="audio-lose">
+				<source src="assets/audio/Dramatic-event-piano.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
 			
 
 
