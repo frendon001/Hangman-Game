@@ -2,7 +2,7 @@
 body{
 /*	background-image: url(../images/space.jpg);
 	background-repeat: no-repeat;*/
-	  background: url(../images/space.jpg) no-repeat center center fixed; 
+	  background: url(https://raw.githubusercontent.com/frendon001/Hangman-Game/gh-pages/assets/images/Space.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
