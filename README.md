@@ -6,7 +6,7 @@ Start playing by visiting this link: https://frendon001.github.io/Hangman-Game/
 
 Go to the link above and have fun!
 
-![Home Page](assets/images/hangman.png)
+![Home Page](assets/images/Hangman.png)
 
 
 ## Built With
