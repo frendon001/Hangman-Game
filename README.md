@@ -1,32 +1,13 @@
 # Hangman-Game
 
-Checkout my version of the classic Hangman Game. 
+Checkout my version of Hangman. 
 
 Start playing by visiting this link: https://frendon001.github.io/Hangman-Game/
 
-## Getting Started
+Go to the link above and have fun!
 
-NA
+![Home Page](assets/images/hangman.png)
 
-### Prerequisites
-
-NA
-
-### Installing
-
-NA
-
-## Running the tests
-
-NA
-
-### And coding style tests
-
-NA
-
-## Deployment
-
-NA
 
 ## Built With
 
@@ -37,7 +18,7 @@ NA
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Versioning
 
